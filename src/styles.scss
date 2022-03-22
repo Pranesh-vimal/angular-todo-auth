@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --primary-color: #f76e11;
+  --secondary-color: #ff9f45;
+  --tertiary-color: #ffbc80;
+  --quaternary-color: #fc4f4f;
+  --primary-font-color: #fff;
+  --secondary-font-color: #65c18c;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Fredoka", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+@import "~ngx-toastr/toastr";

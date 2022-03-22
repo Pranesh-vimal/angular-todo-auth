@@ -1,0 +1,29 @@
+<div class="filter">
+  <div class="stats">
+    <p class="name" *ngIf="authService.currentUser | async as user">
+      Hi, <b>{{ user.displayName }}</b>
+    </p>
+    <p class="heading">
+      Total : <span>{{ count }}</span>
+    </p>
+    <p class="heading">
+      Pending : <span>{{ pending }}</span>
+    </p>
+    <p class="heading">
+      Completed : <span>{{ completed }}</span>
+    </p>
+  </div>
+  <div class="category">
+    <a
+      [routerLink]="['']"
+      [routerLinkActive]="'active'"
+      [routerLinkActiveOptions]="{ exact: true }"
+      >All</a
+    >
+  </div>
+  <div class="category" *ngFor="let category of categories">
+    <a [routerLink]="['/todos', category]" [routerLinkActive]="'active'">{{
+      category
+    }}</a>
+  </div>
+</div>

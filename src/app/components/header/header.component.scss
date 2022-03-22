@@ -1,0 +1,43 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--primary-color);
+  width: 100%;
+  z-index: 10;
+  top: 0;
+  position: fixed;
+
+  .heading {
+    font-weight: bold;
+    color: var(--primary-font-color);
+
+    a {
+      color: var(--primary-font-color);
+      font-weight: bold;
+    }
+
+    span {
+      font-weight: lighter;
+    }
+  }
+
+  .links {
+    a {
+      color: var(--primary-font-color);
+      padding: 0.5rem 1rem;
+      transition: 1s;
+      border-radius: 10px;
+      margin-right: 1rem;
+
+      &:hover {
+        background-color: var(--secondary-color);
+      }
+    }
+
+    .active {
+      display: none;
+    }
+  }
+}

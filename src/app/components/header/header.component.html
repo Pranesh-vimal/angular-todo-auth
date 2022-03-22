@@ -1,0 +1,21 @@
+<div class="navbar">
+  <p class="heading"><a [routerLink]="'/'">Todo List</a></p>
+  <p class="links">
+    <a
+      [routerLink]="'add-todo'"
+      [routerLinkActive]="'active'"
+      *ngIf="authService.currentUser | async as user"
+      >Add Todo</a
+    >
+    <a
+      [routerLink]="''"
+      *ngIf="authService.currentUser | async as user; else loginButton"
+      (click)="logout()"
+      >Logout</a
+    >
+    <ng-template #loginButton>
+      <a [routerLink]="'auth/signin'" [routerLinkActive]="'active'">Sign In</a>
+      <a [routerLink]="'auth/signup'" [routerLinkActive]="'active'">Sign Up</a>
+    </ng-template>
+  </p>
+</div>

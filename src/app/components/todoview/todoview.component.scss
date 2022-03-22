@@ -1,0 +1,100 @@
+.container {
+  padding: 7% 10%;
+
+  .todo {
+    padding: 1rem 1rem;
+    background-color: var(--secondary-color);
+    border-radius: 5px;
+
+    .title {
+      color: var(--primary-font-color);
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--primary-font-color);
+    }
+
+    .description {
+      color: var(--primary-font-color);
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+    }
+
+    .footer {
+      display: flex;
+      justify-content: space-between;
+
+      .date {
+        font-size: small;
+        color: var(--primary-font-color);
+      }
+
+      .options {
+        display: flex;
+        justify-content: space-between;
+
+        .status {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 1.5rem;
+          width: 1.5rem;
+          border-radius: 50%;
+          transition: background-color, transform 500ms;
+          color: var(--primary-font-color);
+          font-size: small;
+          margin-right: 0.5rem;
+          cursor: pointer;
+
+          &:hover.completed {
+            background-color: var(--quaternary-color);
+            color: var(--primary-font-color);
+            transform: rotate3d(0, 0, 1, 360deg);
+          }
+
+          &:hover.pending {
+            background-color: var(--secondary-font-color);
+            color: var(--primary-font-color);
+            transform: rotate3d(0, 0, 1, 360deg);
+          }
+        }
+
+        .edit {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 1.5rem;
+          width: 1.5rem;
+          border-radius: 50%;
+          transition: background-color, transform 500ms;
+          color: var(--primary-font-color);
+          font-size: small;
+          margin-right: 0.5rem;
+
+          &:hover {
+            background-color: var(--primary-font-color);
+            color: var(--secondary-color);
+            transform: rotate3d(0, 0, 1, 360deg);
+          }
+        }
+
+        .back {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 1.5rem;
+          width: 1.5rem;
+          border-radius: 50%;
+          transition: background-color, transform 500ms;
+          color: var(--primary-font-color);
+          font-size: small;
+
+          &:hover {
+            background-color: var(--primary-font-color);
+            color: var(--secondary-color);
+            transform: rotate3d(0, 0, 1, 360deg);
+          }
+        }
+      }
+    }
+  }
+}

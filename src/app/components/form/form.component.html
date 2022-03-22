@@ -1,0 +1,57 @@
+<div class="container">
+  <div class="heading">
+    <p class="heading-text">Add Todo</p>
+  </div>
+  <div class="form">
+    <div class="form-group">
+      <label for="title" class="label">Title</label>
+      <input
+        type="text"
+        class="form-control"
+        name="title"
+        [(ngModel)]="todo.title"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="desciption" class="label">Desciption</label>
+      <textarea
+        type="text"
+        class="form-control"
+        name="desciption"
+        [(ngModel)]="todo.description"
+        required
+      ></textarea>
+    </div>
+    <div class="form-group">
+      <label for="category" class="label">Category</label>
+      <select
+        class="form-control"
+        name="category"
+        [(ngModel)]="todo.category"
+        required
+      >
+        <option value="">Select</option>
+        <option *ngFor="let category of categories" [value]="category">
+          {{ category }}
+        </option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="completed" class="label">Completed</label>
+      <select
+        class="form-control"
+        name="category"
+        [(ngModel)]="todo.completed"
+        required
+      >
+        <option [value]="true">Completed</option>
+        <option [value]="false">Pending</option>
+      </select>
+    </div>
+    <div>
+      <button class="btn" (click)="onSubmit()">Submit</button>
+      <button class="btn" [routerLink]="'/'">Back</button>
+    </div>
+  </div>
+</div>

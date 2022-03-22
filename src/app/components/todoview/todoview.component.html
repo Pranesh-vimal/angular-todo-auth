@@ -1,0 +1,28 @@
+<div class="container" *ngIf="todo">
+  <div class="todo">
+    <h3 class="title">{{ todo.title }}</h3>
+    <p class="description">{{ todo.description }}</p>
+    <div class="footer">
+      <div class="date">
+        <p>{{ todo.created_at | date: "dd/MM/yyyy" }}</p>
+      </div>
+      <div class="options">
+        <p
+          class="status"
+          [class.pending]="!todo.completed"
+          [class.completed]="todo.completed"
+          (click)="toggleStatus()"
+        >
+          <i *ngIf="!todo.completed" class="fa-solid fa-check"></i>
+          <i *ngIf="todo.completed" class="fa-solid fa-close"></i>
+        </p>
+        <a class="edit" [routerLink]="['/todos/', todo.id, 'edit']">
+          <i class="fa-solid fa-pen"></i>
+        </a>
+        <a class="back" [routerLink]="['/']">
+          <i class="fa-solid fa-caret-left"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

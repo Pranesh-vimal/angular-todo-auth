@@ -1,0 +1,37 @@
+<div class="container">
+  <app-filter></app-filter>
+  <div class="display-todos">
+    <div class="pending-todos">
+      <p class="heading">Pending Todos</p>
+      <div class="todo-list">
+        <div
+          *ngFor="let todo of todos"
+          class="todo"
+          ngClass="{{ todo.completed ? 'done' : '' }}"
+        >
+          <app-todo
+            (emitChangeStatus)="changeStatus($event)"
+            (emitDeleteTodo)="deleteTodo($event)"
+            [todo]="todo"
+          ></app-todo>
+        </div>
+      </div>
+    </div>
+    <div class="completed-todos">
+      <p class="heading">Completed Todos</p>
+      <div class="todo-list">
+        <div
+          *ngFor="let todo of todos"
+          class="todo"
+          ngClass="{{ !todo.completed ? 'undone' : '' }}"
+        >
+          <app-todo
+            (emitChangeStatus)="changeStatus($event)"
+            (emitDeleteTodo)="deleteTodo($event)"
+            [todo]="todo"
+          ></app-todo>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
